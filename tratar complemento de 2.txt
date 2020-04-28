@@ -1,0 +1,24 @@
+			#printa nova linha
+			#assume que o immediato ta em $a1
+			li $v0, 4
+			la $a0, newline
+			syscall
+			
+			#verifica se o immediato é negativo
+			srl $t1, $a1, 15
+			bnez $t1, negative
+			move $t0, $a1
+			
+			j resume
+			#se for converte pra binario(resultado fica positovo)
+			negative:
+			sll $t1, $a1, 16
+			not $t1, $t1
+			srl $t1, $t1, 16
+			addi $t1, $t1, 1
+			move $t0, $t1
+			
+			resume:
+			li $v0, 1
+			move $a0, $t0
+			syscall
