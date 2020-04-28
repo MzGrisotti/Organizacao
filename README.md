@@ -1,5 +1,9 @@
 # Organizacao
 
+## OBS
+
+    Trocar o caminho do arquivo text.bin no main.asm
+
 ## Feito:
 
     Leitura do Arquivo text.bin;
